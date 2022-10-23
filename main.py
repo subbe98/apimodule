@@ -35,15 +35,15 @@ def predict():
     y = X.pop('PWEA-T')
 
     # split data into train and test set with test size 0.2
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-    predictions = model.predict(X_test)
-    metrics = {
-        'MSE score': mean_squared_error(y_test, predictions),
-        'R2 score': r2_score(y_test, predictions)
-    }
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+    predictions = model.predict(X)
+    # metrics = {
+        # 'MSE score': mean_squared_error(y_test, predictions),
+        # 'R2 score': r2_score(y_test, predictions)
+    # }
     return {
         "Predictions": predictions.tolist(),
-        "Metrics": metrics
+        # "Metrics": metrics
     }
 
 
