@@ -42,8 +42,8 @@ def predict():
         # 'R2 score': r2_score(y_test, predictions)
     # }
     return {
-        "Predictions": predictions.tolist(),
-        # "Metrics": metrics
+        "predictions": predictions.tolist(),
+        "index": X.index.tolist()
     }
 
 
