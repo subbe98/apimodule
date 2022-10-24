@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 # read csv from a github repo
-api_url = "http://localhost:8000/predict"
+api_url = "https://apimodule.herokuapp.com/predict"
 response = requests.get(api_url)
 data = json.loads(response.text)
 
