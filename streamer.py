@@ -31,6 +31,8 @@ df_2 = df.copy()
 # dashboard title
 st.title("Real-Time / Live Data Science Dashboard")
 
+selected = st.selectbox('Choose model', np.array(['XGB', 'Linear', 'FFNN', 'LSTM']))
+
 # creating a single-element container
 placeholder = st.empty()
 
@@ -48,7 +50,7 @@ for seconds in range(1, len(df), 60):
 
     with placeholder.container():
         
-        st.markdown("### Visualizer")
+        st.header(f"Visualization using {selected} model")
 
         # create three columns
         kpi1, kpi2, kpi3 = st.columns(3)
